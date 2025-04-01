@@ -1,14 +1,13 @@
-import numpy as np
 import DataGenerator
 import LinearRegression
 from matplotlib import pyplot as plt
 
 
-def main() -> None:
+def LinearWithNoise(noise: float) -> None:
     fig = plt.figure(figsize=(8, 6))
 
     # Create scatter plot for linear function plus noise:
-    (xData, yData) = DataGenerator.LinearGenerator(100, 0.5)
+    (xData, yData) = DataGenerator.LinearGenerator(100, noise)
     p1 = plt.scatter(xData, yData)
 
     # Get optimal solutions for the line:
