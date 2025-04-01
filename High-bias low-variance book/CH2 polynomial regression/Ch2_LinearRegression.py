@@ -1,5 +1,5 @@
-import DataGenerator
-import LinearRegression
+from Shared import DataGenerator
+from Shared import LinearRegression
 from matplotlib import pyplot as plt
 
 
@@ -8,19 +8,15 @@ def LinearWithNoise(noise: float) -> None:
 
     # Create scatter plot for linear function plus noise:
     (xData, yData) = DataGenerator.LinearGenerator(100, noise)
-    p1 = plt.scatter(xData, yData)
+    scatterPlot = plt.scatter(xData, yData)
 
-    # Get optimal solutions for the line:
-    (linearConstant, offSet) = LinearRegression.GetOptimalSolution(xData, yData)
+    # Get optimal solutions for the line and add to plot
+    modelParameters = LinearRegression.GetOptimalSolution(xData, yData)
+    linearConstant, offSet = modelParameters
     print(linearConstant, offSet)
-
-    # Add to plot
     regressionOutput = linearConstant * xData + offSet
-    plt.plot(xData, regressionOutput, "r")
+    fitPlot = plt.plot(xData, regressionOutput, "r")
 
     # Print mean squared error and its derivative
-    print(LinearRegression.MeanSqrdError(linearConstant, offSet, xData, yData))
-
-    print(
-        LinearRegression.MeanSqrdErrorDerivative(linearConstant, offSet, xData, yData)
-    )
+    print(LinearRegression.MeanSqrdError(modelParameters, xData, yData))
+    print(LinearRegression.MeanSqrdErrorDerivative(modelParameters, xData, yData))
