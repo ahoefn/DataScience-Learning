@@ -1,5 +1,7 @@
+import numpy as np
 from Shared import DataGenerator
 from Shared import LinearRegression
+from Shared.CustomTyping import *
 from matplotlib import pyplot as plt
 
 

@@ -1,9 +1,10 @@
+from .CustomTyping import *
 import numpy as np
 
 
 def MeanSqrdError(
-    data: np.ndarray[float],
-    expectedData: np.ndarray[float],
+    data: npFloatArray,
+    expectedData: npFloatArray,
 ) -> float:
     assert len(data) == len(expectedData)
     length = len(expectedData)

@@ -1,10 +1,12 @@
+from .CustomTyping import *
 import numpy as np
+from numpy import typing as npT
 
 
 def LinearGenerator(
     sampleCount: int, standardDev: float
-) -> tuple[np.ndarray, np.ndarray]:
-    xData = np.linspace(0.05, 0.95, sampleCount)
+) -> tuple[npFloatArray, npFloatArray]:
+    xData: npFloatArray = np.linspace(0.05, 0.95, sampleCount, dtype=float)
     variances = standardDev * np.random.randn(sampleCount)
     yData = 2 * xData + variances
     return (xData, yData)
