@@ -11,3 +11,7 @@ while in the DataScience-Learning directiory. Then, the chapters can be ran usin
     python ./src/[chapter python file]
 
 where the python files are the different in the [src](https://github.com/ahoefn/DataScience-Learning/tree/main/src) directort.
+
+### Dependencies
+[numpy](https://numpy.org/)
+[matplotlib](https://matplotlib.org/)
