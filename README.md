@@ -4,7 +4,7 @@ A collection of files I'll write while learning the basics of data science.
 
 First run
 
-    pip install .e
+    pip install .
     
 while in the DataScience-Learning directiory. Then, the chapters can be ran using 
 
