@@ -1,3 +1,5 @@
 .vscode
 .venv
+build
+src\DataScienceLearning.egg-info
 **\__pycache__

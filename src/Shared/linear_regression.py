@@ -1,4 +1,4 @@
-from .CustomTyping import *
+from .custom_typing import npFloatArray
 import numpy as np
 
 

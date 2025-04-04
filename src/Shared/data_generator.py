@@ -1,6 +1,5 @@
-from .CustomTyping import *
+from .custom_typing import npFloatArray
 import numpy as np
-from numpy import typing as npT
 
 
 def LinearGenerator(

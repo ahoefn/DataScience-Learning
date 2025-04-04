@@ -1,0 +1,5 @@
+Ch2_LinearRegression
+Ch4_NewtonOptimizer
+Ch4_StocahsticDescent
+shared
+__init__
