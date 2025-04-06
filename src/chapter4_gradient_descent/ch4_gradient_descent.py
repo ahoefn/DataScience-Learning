@@ -23,7 +23,7 @@ def Run() -> None:
         LinearModel(initialParameters),
         xData,
         yData,
-        0.1,
+        0.6,
     )
     errorLog: list[float] = [iterator.GetCurrentCost()]
 
