@@ -19,7 +19,7 @@ def Run() -> None:
 
     # Construct iterator with linear model
     initialParameters: npFloatArray = np.random.randn(2)
-    iterator = gradient_descent.NewtonOptimizer(
+    iterator = gradient_descent.GradientDescent(
         LinearModel(initialParameters),
         xData,
         yData,

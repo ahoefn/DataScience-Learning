@@ -3,7 +3,7 @@ from ..custom_typing import npFloatArray
 from ..models import Model
 
 
-class NewtonOptimizer(GradientDescentBase):
+class GradientDescent(GradientDescentBase):
     def __init__(
         self,
         model: Model,

@@ -16,3 +16,12 @@ class StochasticDescent(GradientDescentBase):
         self.stepSize = stepSize
         self.currentMiniBatch = 0
         self.miniBatchSize = miniBatchSize
+
+    def step(self) -> None:
+        
+
+    def stepMiniBatch(self) -> None:
+        startIndex: int = self.currentMiniBatch * self.miniBatchSize
+        endIndex: int = min(startIndex + self.miniBatchSize, len(self.inputData))
+        velocityVec = -self.stepSize * self.GetCurrentDerivPartial(startIndex, endIndex)
+        self.model.parameters += velocityVec

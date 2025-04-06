@@ -22,6 +22,6 @@ if __name__ == "__main__":
         print("Please select a chapter to run by adding a suitable argument.")
         print("Valid chapter arguments are:")
         print("'-ch2' running a linear regression module")
-        print("'-ch4-grad' running an optimizer using newtons method")
+        print("'-ch4-grad' optimizer using gradient descent ")
     for arg in sys.argv[1:]:
         RunChapter(arg)
