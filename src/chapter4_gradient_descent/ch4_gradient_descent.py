@@ -32,7 +32,7 @@ def Run() -> None:
         errorLog.append(iterator.GetCurrentCost())
 
         plt.plot(iterator.inputData, iterator.GetCurrentOutput())
-        print(iterator.GetCurrentCost())
+        # print(iterator.GetCurrentCost())
 
     plt.plot(iterator.inputData, iterator.GetCurrentOutput())
     plt.figure(figsize=(8, 6))
