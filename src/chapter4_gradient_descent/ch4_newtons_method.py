@@ -10,11 +10,11 @@ from shared import data_generator
 def Run() -> None:
     noise = 0.2
 
-    fig = plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 6))
 
     # Create scatter plot for linear function plus noise:
     (xData, yData) = data_generator.LinearGenerator(3, noise)
-    scatterPlot = plt.scatter(xData, yData)
+    plt.scatter(xData, yData)
 
     # Construct iterator with linear model
     initialParameters: npFloatArray = np.random.randn(2)
@@ -33,8 +33,8 @@ def Run() -> None:
 
         plt.plot(iterator.inputData, iterator.GetCurrentOutput())
 
-    fig = plt.figure(figsize=(8, 6))
-    errorPlot = plt.plot(errorLog)
+    plt.figure(figsize=(8, 6))
+    plt.plot(errorLog)
 
     print(f"Output parameters: {iterator.model.parameters}")
     plt.show()
