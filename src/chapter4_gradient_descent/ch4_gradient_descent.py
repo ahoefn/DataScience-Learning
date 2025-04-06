@@ -2,8 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 from shared.custom_typing import npFloatArray
-from shared.gradient_descent import gradient_descent
-from chapter2_linear_regression.linear_regression import GetOptimalSolution
+from shared.gradient_descent import GradientDescent
 from shared.models import LinearModel
 from shared import data_generator
 
@@ -19,7 +18,7 @@ def Run() -> None:
 
     # Construct iterator with linear model
     initialParameters: npFloatArray = np.random.randn(2)
-    iterator = gradient_descent.GradientDescent(
+    iterator = GradientDescent(
         LinearModel(initialParameters),
         xData,
         yData,

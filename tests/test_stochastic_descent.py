@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from src.shared.gradient_descent.gradient_descent import Stochastic
+from src.shared.gradient_descent.import StochasticDescent
 from src.shared.models import LinearModel
 from src.shared.custom_typing import npFloatArray
 

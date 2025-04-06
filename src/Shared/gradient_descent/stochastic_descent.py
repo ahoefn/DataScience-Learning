@@ -1,6 +1,6 @@
 from .gradient_descent_base import GradientDescentBase
 from ..custom_typing import npFloatArray
-from models.model import Model
+from ..models.model import Model
 
 
 class StochasticDescent(GradientDescentBase):
@@ -18,7 +18,7 @@ class StochasticDescent(GradientDescentBase):
         self.miniBatchSize = miniBatchSize
 
     def step(self) -> None:
-        
+        pass
 
     def stepMiniBatch(self) -> None:
         startIndex: int = self.currentMiniBatch * self.miniBatchSize
