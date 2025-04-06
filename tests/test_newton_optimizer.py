@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from src.shared.gradient_descent.newtons_method import NewtonOptimizer
+from src.shared.gradient_descent.gradient_descent import NewtonOptimizer
 from src.shared.models import LinearModel
 from src.shared.custom_typing import npFloatArray
 
