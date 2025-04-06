@@ -8,9 +8,9 @@ First run
     
 while in the DataScience-Learning directiory. Then, the chapters can be ran using 
 
-    python ./src/[chapter python file]
+    python src/main.py [arguments]
 
-where the python files are the different files in the [src](https://github.com/ahoefn/DataScience-Learning/tree/main/src) directory.
+where [arguments] denotes which chapter should be run. Valid inputs here are 'ch2' and 'ch4-grad'. Note that multiple chapters can be run at the same time.
 
 ### Dependencies
 
