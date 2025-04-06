@@ -14,7 +14,7 @@ def Run() -> None:
     plt.figure(figsize=(8, 6))
 
     # Create scatter plot for linear function plus noise:
-    (xData, yData) = data_generator.LinearGenerator(200, noise)
+    (xData, yData) = data_generator.LinearGenerator(100, noise)
     plt.scatter(xData, yData)
 
     # Construct iterator with linear model
