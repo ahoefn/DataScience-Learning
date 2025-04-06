@@ -1,19 +1,18 @@
 from .gradient_descent_base import GradientDescentBase
 from ..custom_typing import npFloatArray
-from ..models import Model
+from models.model import Model
 
 
-class NewtonOptimizer(GradientDescentBase):
+class StochasticDescent(GradientDescentBase):
     def __init__(
         self,
         model: Model,
         inputData: npFloatArray,
         expectedResults: npFloatArray,
         stepSize: float,
+        miniBatchSize: int,
     ) -> None:
         GradientDescentBase.__init__(self, model, inputData, expectedResults)
-        self.stepSize: float = stepSize
-
-    def step(self) -> None:
-        velocityVec = -self.stepSize * self.GetCurrentDeriv()
-        self.model.parameters += velocityVec
+        self.stepSize = stepSize
+        self.currentMiniBatch = 0
+        self.miniBatchSize = miniBatchSize

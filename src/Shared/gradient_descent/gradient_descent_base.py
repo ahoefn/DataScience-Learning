@@ -1,29 +1,26 @@
 from ..custom_typing import npFloatArray
-from collections.abc import Callable
+from ..models.model import Model
 
 
 class GradientDescentBase:
     def __init__(
         self,
-        ModelFunc: Callable,  # (npFloatArray,npFloatArray) -> npFloatArray
-        CostFunc: Callable,  # (npFloatArray,npFloatArray) -> float
-        DerivFunc: Callable,  # (npFloatArray,npFloatArray) -> npFloatArray
-        parameters: npFloatArray,
+        model: Model,
         inputData: npFloatArray,
         expectedResults: npFloatArray,
     ) -> None:
-        self.ModelFunc = ModelFunc
-        self.CostFunc = CostFunc
-        self.DerivFunc = DerivFunc
-        self.parameters = parameters
-        self.inputData = inputData
-        self.expectedResults = expectedResults
+        self.model: Model = model
+        self.inputData: npFloatArray = inputData
+        self.expectedResults: npFloatArray = expectedResults
 
-    def GetCurrentError(self) -> float:
-        return self.CostFunc(self.parameters, self.inputData, self.expectedResults)
+    def GetCurrentOutput(self) -> npFloatArray:
+        return self.model.GetOutput(self.inputData)
+
+    def GetCurrentCost(self) -> float:
+        return self.model.GetCost(self.inputData, self.expectedResults)
+
+    def GetCurrentDeriv(self) -> npFloatArray:
+        return self.model.GetDeriv(self.inputData, self.expectedResults)
 
     def step(self) -> None:
         raise NotImplementedError
-
-    def GetCurrentOutput(self) -> npFloatArray:
-        return self.ModelFunc(self.parameters, self.inputData)
