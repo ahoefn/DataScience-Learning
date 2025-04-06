@@ -10,7 +10,11 @@ while in the DataScience-Learning directiory. Then, the chapters can be ran usin
 
     python src/main.py [arguments]
 
-where [arguments] denotes which chapter should be run. Valid inputs here are 'ch2' and 'ch4-grad'. Note that multiple chapters can be run at the same time.
+where [arguments] denotes which chapter should be run. Valid inputs here are '-ch2' and '-ch4-grad'. Note that multiple chapters can be run at the same time. For example, one can run
+
+    python src/main.py -ch4-grad
+
+to run src/ch4_gradient_descent/ch4_gradient_descent.py
 
 ### Dependencies
 
