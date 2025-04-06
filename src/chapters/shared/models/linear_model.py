@@ -17,8 +17,6 @@ def LinearModelFunc(parameters: npFloatArray, inputData: npFloatArray) -> npFloa
     return parameters[0] + parameters[1] * inputData
 
 
-# TODO: this does not work, needs info from parameters
-# assumes inputdata is calculated using the linear model function
 def MeanSqrdErrorDerivative(
     parameters: npFloatArray,
     inputData: npFloatArray,

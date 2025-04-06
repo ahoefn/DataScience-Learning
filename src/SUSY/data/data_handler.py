@@ -29,7 +29,7 @@ class DataHandler:
             "cos(theta_r1)",
         ]
         print(filePath)
-        self.dataFrame = pd.read_csv(filePath, names=columns)
+        self.dataFrame = pd.read_csv(filePath, nrows=1550000, names=columns)
 
     def GetTrainData(self) -> pd.DataFrame:
         return self.dataFrame.iloc[:1500000]
