@@ -20,8 +20,7 @@ class StochasticDescent(GradientDescentBase):
         self.miniBatchSize: int = miniBatchSize
 
     def step(self) -> None:
-        miniBatchCount: int = math.ceil(len(self.inputData) / self.miniBatchSize) - 1
-        print(miniBatchCount)
+        miniBatchCount: int = math.ceil(len(self.inputData) / self.miniBatchSize)
         for i in range(miniBatchCount):
             self.currentMiniBatch = i
             self.stepMiniBatch()

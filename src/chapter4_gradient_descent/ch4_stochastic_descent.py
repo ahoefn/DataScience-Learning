@@ -18,11 +18,13 @@ def Run() -> None:
 
     # Construct iterator with linear model
     initialParameters: npFloatArray = np.random.randn(2)
-    iterator = StochasticDescent(LinearModel(initialParameters), xData, yData, 0.6, 5)
+    iterator = StochasticDescent(LinearModel(initialParameters), xData, yData, 0.01, 5)
     errorLog: list[float] = [iterator.GetCurrentCost()]
 
+    print(f"Inital parmeters: {initialParameters}")
+    plt.plot(iterator.inputData, iterator.GetCurrentOutput())
     # Start optimization:
-    for i in range(90):
+    for i in range(5000):
         # iterator.currentMiniBatch = i % 10
         # iterator.stepMiniBatch()
         iterator.step()
