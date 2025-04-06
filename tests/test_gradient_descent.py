@@ -1,9 +1,9 @@
 import unittest
 import numpy as np
 
-from src.shared.gradient_descent.gradient_descent import GradientDescent
-from src.shared.models import LinearModel
-from src.shared.custom_typing import npFloatArray
+from src.chapters.shared.gradient_descent.gradient_descent import GradientDescent
+from src.chapters.shared.models import LinearModel
+from src.chapters.shared.custom_typing import npFloatArray
 
 
 class TestGradientDescent(unittest.TestCase):

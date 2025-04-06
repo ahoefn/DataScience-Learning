@@ -1,10 +1,10 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
-from shared.custom_typing import npFloatArray
-from shared.gradient_descent import StochasticDescent
-from shared.models import LinearModel
-from shared import data_generator
+from chapters.shared.custom_typing import npFloatArray
+from chapters.shared.gradient_descent import GradientDescent
+from chapters.shared.models import LinearModel
+from chapters.shared import data_generator
 
 
 def Run() -> None:
@@ -18,15 +18,16 @@ def Run() -> None:
 
     # Construct iterator with linear model
     initialParameters: npFloatArray = np.random.randn(2)
-    iterator = StochasticDescent(LinearModel(initialParameters), xData, yData, 0.01, 5)
+    iterator = GradientDescent(
+        LinearModel(initialParameters),
+        xData,
+        yData,
+        0.6,
+    )
     errorLog: list[float] = [iterator.GetCurrentCost()]
 
-    print(f"Inital parmeters: {initialParameters}")
-    plt.plot(iterator.inputData, iterator.GetCurrentOutput())
     # Start optimization:
     for i in range(5000):
-        # iterator.currentMiniBatch = i % 10
-        # iterator.stepMiniBatch()
         iterator.step()
         errorLog.append(iterator.GetCurrentCost())
 

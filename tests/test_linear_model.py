@@ -1,10 +1,10 @@
 import unittest
 import numpy as np
 
-from src.shared.models.mean_squared_error import MeanSqrdError
-from src.shared.models.linear_model import MeanSqrdErrorDerivative
-from src.shared.custom_typing import npFloatArray
-from src.shared.models import LinearModel
+from src.chapters.shared.models.mean_squared_error import MeanSqrdError
+from src.chapters.shared.models.linear_model import MeanSqrdErrorDerivative
+from src.chapters.shared.custom_typing import npFloatArray
+from src.chapters.shared.models import LinearModel
 
 
 class TestLinearModel(unittest.TestCase):

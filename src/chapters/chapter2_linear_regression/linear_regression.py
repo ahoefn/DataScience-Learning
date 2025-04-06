@@ -1,5 +1,6 @@
-from shared.custom_typing import npFloatArray
 import numpy as np
+
+from chapters.shared.custom_typing import npFloatArray
 
 
 def LinearModelFunc(parameters: npFloatArray, inputData: npFloatArray) -> npFloatArray:

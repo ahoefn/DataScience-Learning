@@ -1,6 +1,7 @@
-from shared import data_generator
-from chapter2_linear_regression import linear_regression
 from matplotlib import pyplot as plt
+
+from chapters.shared import data_generator
+from . import linear_regression
 
 
 def Run() -> None:

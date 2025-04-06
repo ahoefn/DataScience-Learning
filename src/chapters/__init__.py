@@ -1,0 +1,3 @@
+from .chapter2_linear_regression import ch2_linear_regression
+from .chapter4_gradient_descent import ch4_gradient_descent
+from .chapter4_gradient_descent import ch4_stochastic_descent
