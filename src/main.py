@@ -5,7 +5,7 @@ from chapters import ch4_gradient_descent
 from chapters import ch4_stochastic_descent
 
 
-def RunChapter(chapter: str):
+def RunChapter(chapter: str) -> None:
     match chapter:
         case "-ch2":
             ch2_linear_regression.Run()
