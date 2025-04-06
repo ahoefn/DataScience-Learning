@@ -1,0 +1,1 @@
+Note, in order for the calculations in this module to work, the [SUSY](https://archive.ics.uci.edu/dataset/279/susy) dataset is necessary and must be manually placed in the src/SUSY/data folder.

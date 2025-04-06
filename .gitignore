@@ -3,3 +3,4 @@
 build
 src\DataScienceLearning.egg-info
 **\__pycache__
+*.csv
