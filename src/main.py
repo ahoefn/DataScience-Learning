@@ -2,6 +2,7 @@ import sys
 
 from chapter2_linear_regression import ch2_linear_regression
 from chapter4_gradient_descent import ch4_gradient_descent
+from chapter4_gradient_descent import ch4_stochastic_descent
 
 
 def RunChapter(chapter: str):
@@ -12,8 +13,10 @@ def RunChapter(chapter: str):
         case "-ch4-grad":
             ch4_gradient_descent.Run()
 
+        case "-ch4-stoch":
+            ch4_stochastic_descent.Run()
         case _:
-            print("Invalid argument, valid arguments are: ch2, ch4-grad")
+            print("Invalid argument, valid arguments are: ch2, ch4-grad, ch4-stoch")
             raise ValueError
 
 
@@ -23,6 +26,7 @@ if __name__ == "__main__":
         print("Valid chapter arguments are:")
         print("'-ch2' running a linear regression module")
         print("'-ch4-grad' optimizer using gradient descent ")
+        print("'-ch4-stoch' optimizer using stochastic descent")
 
     for arg in sys.argv[1:]:
         RunChapter(arg)

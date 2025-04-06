@@ -10,7 +10,7 @@ class TestGradientDescent(unittest.TestCase):
     def setUp(self) -> None:
         xData: npFloatArray = np.array([0, 1, 2])
         yData: npFloatArray = np.array([-1, 4, 9])
-        parameters: npFloatArray = np.array([-1, 3])
+        parameters: npFloatArray = np.array([-1, 3], dtype=np.float64)
         self.iterator = GradientDescent(LinearModel(parameters), xData, yData, 1 / 2)
 
     def test_GetCurrentOutput(self) -> None:
@@ -26,7 +26,7 @@ class TestGradientDescent(unittest.TestCase):
         np.testing.assert_almost_equal(self.iterator.GetCurrentDeriv(), expectedDeriv)
 
     def test_Step(self) -> None:
-        expectedParams: npFloatArray = np.array([3, 3 + 10 / 3])
+        expectedParams: npFloatArray = np.array([1, 3 + 10 / 3])
         self.iterator.step()
         outputParams: npFloatArray = self.iterator.model.parameters
         np.testing.assert_almost_equal(outputParams, expectedParams)

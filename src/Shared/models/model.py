@@ -17,7 +17,7 @@ class Model:
         self.ModelFunc = ModelFunc
         self.CostFunc = CostFunc
         self.DerivFunc = DerivFunc
-        self.parameters = parameters
+        self.parameters: npFloatArray = parameters
 
     def GetOutput(self, inputData: npFloatArray) -> npFloatArray:
         return self.ModelFunc(self.parameters, inputData)

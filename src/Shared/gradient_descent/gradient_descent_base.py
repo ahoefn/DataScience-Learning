@@ -1,4 +1,3 @@
-from fontTools.varLib import partial
 from ..custom_typing import npFloatArray
 from ..models.model import Model
 

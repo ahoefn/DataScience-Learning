@@ -15,5 +15,5 @@ class GradientDescent(GradientDescentBase):
         self.stepSize: float = stepSize
 
     def step(self) -> None:
-        velocityVec = -self.stepSize * self.GetCurrentDeriv()
+        velocityVec: npFloatArray = -self.stepSize * self.GetCurrentDeriv()
         self.model.parameters += velocityVec

@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from src.shared.gradient_descent.import StochasticDescent
+from src.shared.gradient_descent import StochasticDescent
 from src.shared.models import LinearModel
 from src.shared.custom_typing import npFloatArray
 
@@ -10,8 +10,10 @@ class TestGradientDescent(unittest.TestCase):
     def setUp(self) -> None:
         xData: npFloatArray = np.array([0, 1, 2])
         yData: npFloatArray = np.array([-1, 4, 9])
-        parameters: npFloatArray = np.array([-1, 3])
-        self.iterator = GradientDescent(LinearModel(parameters), xData, yData, 1 / 2)
+        parameters: npFloatArray = np.array([-1, 3], dtype=np.float64)
+        self.iterator = StochasticDescent(
+            LinearModel(parameters), xData, yData, 1 / 2, 2
+        )
 
     def test_GetCurrentOutput(self) -> None:
         expectedOutput: npFloatArray = np.array([-1, 2, 5])
@@ -25,8 +27,22 @@ class TestGradientDescent(unittest.TestCase):
         expectedDeriv: npFloatArray = np.array([-4, -20 / 3])
         np.testing.assert_almost_equal(self.iterator.GetCurrentDeriv(), expectedDeriv)
 
+    def test_StepMiniBatch(self) -> None:
+        # Test for first minibatch:
+        expectedParams: npFloatArray = np.array([0, 4])
+        self.iterator.stepMiniBatch()
+        outputParams: npFloatArray = self.iterator.model.parameters
+        np.testing.assert_almost_equal(outputParams, expectedParams)
+
+        # Test for second minibatch:
+        self.iterator.currentMiniBatch = 1
+        expectedParams: npFloatArray = np.array([1, 6])
+        self.iterator.stepMiniBatch()
+        outputParams: npFloatArray = self.iterator.model.parameters
+        np.testing.assert_almost_equal(outputParams, expectedParams)
+
     def test_Step(self) -> None:
-        expectedParams: npFloatArray = np.array([3, 3 + 10 / 3])
+        expectedParams: npFloatArray = np.array([1, 6], dtype=np.float64)
         self.iterator.step()
         outputParams: npFloatArray = self.iterator.model.parameters
         np.testing.assert_almost_equal(outputParams, expectedParams)
